@@ -1,5 +1,6 @@
 import Button from "./Button";
 import ButtonBack from "./ButtonBack";
+import ButtonSpin from "./ButtonSpin";
 
 export default function Input({
   placeholder,
@@ -7,8 +8,11 @@ export default function Input({
   onChange,
   btnval,
   handleSubmit,
+  fetching,
+  handleNext,
   handleBack,
 }) {
+  console.log(fetching)
   return (
     <form
       onSubmit={handleSubmit}
@@ -25,7 +29,7 @@ export default function Input({
 
       <div className={`flex flex-col md:flex-row items-center w-full justify-end ${placeholder === "Jumlah tweet yang ingin ditelusuri" ? "justify-between" : ""}  `}>
         {placeholder === "Jumlah tweet yang ingin ditelusuri" ? <ButtonBack handleBack={handleBack} /> : ""}
-        <Button value={btnval} />
+        {fetching ? <ButtonSpin/> : <Button value={btnval} handleNext={handleNext} handleGenerate={handleSubmit}/>}
       </div>
     </form>
   );

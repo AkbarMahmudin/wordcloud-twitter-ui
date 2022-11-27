@@ -1,16 +1,21 @@
 import React from "react";
 
-const Button = ({value}) => {
+const Button = ({
+  value,
+  handleNext,
+  handleGenerate,
+}) => {
   return (
     <button
-      className="text-white flex items-center md:mt-20 mt-10 gap-3"
+      onClick={value === "Selanjutnya" ? handleNext : handleGenerate}
+      className="text-white flex items-center mt-10 gap-3"
       type="submit"
     >
-      <span className="md:text-2xl text-lg font-semibold">{value}</span>
+      <span className="md:text-xl text-lg font-semibold">{value}</span>
       <div className="border p-2 flex justify-center bg-white rounded-lg">
         <svg
-          width="30"
-          height="30"
+          width="25"
+          height="25"
           viewBox="0 0 35 35"
           xmlns="http://www.w3.org/2000/svg"
         >

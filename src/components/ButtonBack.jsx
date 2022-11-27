@@ -3,13 +3,13 @@ import React from "react";
 const ButtonBack = ({ handleBack }) => {
   return (
     <button
-      className="text-white flex items-center flex-row-reverse md:flex-row md:mt-20 mt-10 gap-3"
+      className="text-white flex items-center flex-row-reverse md:flex-row  mt-10 gap-3"
       onClick={handleBack}
     >
       <div className="border p-2 flex justify-center bg-white rounded-lg">
         <svg
-          width="30"
-          height="30"
+          width="25"
+          height="25"
           viewBox="0 0 24 23"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -19,7 +19,7 @@ const ButtonBack = ({ handleBack }) => {
           />
         </svg>
       </div>
-      <span className="md:text-2xl text-lg font-semibold">Sebelumnya</span>
+      <span className="md:text-xl text-lg font-semibold">Sebelumnya</span>
     </button>
   );
 };
